@@ -13,8 +13,6 @@ class FetchController < ApplicationController
             "locale": "en_US"
         }
 
-        binding.pry
-
         resp = Faraday.post("https://trackapi.nutritionix.com/v2/natural/nutrients") do |req| 
             req.headers["x-app-id"] = ENV['X_APP_ID']
             req.headers["x-app-key"] = ENV['X_APP_KEY']
@@ -25,11 +23,8 @@ class FetchController < ApplicationController
             req.body = body.to_json
         end 
 
-        JSON.parse(resp.body)
-        
+        response = JSON.parse(resp.body)
+        render json: response
     end 
-
-
-
-
+    
 end 

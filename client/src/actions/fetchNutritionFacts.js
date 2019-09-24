@@ -6,6 +6,4 @@ export const fetchNutritionFacts = (props) => {
             .then(data => dispatch({type: 'FETCH_FACTS', payload: data}))
     }
 
-
-
 }

@@ -17,6 +17,8 @@ class InputField extends React.Component {
         }
     }
 
+    
+
 
     onChange = event => {
         this.setState({
@@ -34,6 +36,7 @@ class InputField extends React.Component {
     render() {
         return (
             <div>
+                
                 <form onSubmit={this.onSubmit}>
                     <input type='text' name='input' value={this.state.input} onChange={this.onChange} /> 
                     <input type='submit' />
@@ -44,5 +47,8 @@ class InputField extends React.Component {
 
 
 }
+
+
+
 
 export default connect(null, {fetchNutritionFacts})(InputField)
